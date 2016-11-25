@@ -1,0 +1,22 @@
+﻿[
+  {
+	"DbProvider": "Npgsql",
+	"DomainName": "postgresql.localhost",
+	"EnforceSsl": false,
+	"CdnDomain": "",
+	"AdminEmail": "demo@mixerp.org",
+	"Synonyms": [],
+	"BackupDirectory": "/backups/localhost",
+	"BackupDirectoryIsFixedPath": false
+  },
+  {
+	"DbProvider": "System.Data.SqlClient",
+	"DomainName": "sqlserver.localhost",
+	"EnforceSsl": false,
+	"CdnDomain": "",
+	"AdminEmail": "demo@mixerp.org",
+	"Synonyms": [],
+	"BackupDirectory": "/backups/localhost",
+	"BackupDirectoryIsFixedPath": false
+  }
+]
