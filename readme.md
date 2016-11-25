@@ -1,4 +1,3 @@
-
 ## Step 1 (Prerequisites)
 
 Make sure that you have these software installed.
@@ -10,12 +9,20 @@ Make sure that you have these software installed.
 - [Git for Windows](https://git-scm.com/download/win)
 - [Redis](https://github.com/MSOpenTech/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)
 
-Edit the files under the folder **"env"**. Make sure that you do not end up with a new line.
-
 **IIS Configuration**
 
 ![iis](examples/iis.png)
 
+After installing Git for Windows, clone this repository.
+
+```
+  cd path/to/a/directory
+  git clone https://github.com/mixerp/init
+```
+
+Once you clone the repository, explore to the folder where you cloned it.
+
+Edit the files under the folder **"env"**. Make sure that you do not end up with a new line.
 
 
 ## **Step 2 (Edit hosts file)**
