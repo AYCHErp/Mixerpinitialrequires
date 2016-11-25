@@ -22,7 +22,7 @@ After installing Git for Windows, clone this repository.
 
 Once you clone the repository, explore to the folder where you cloned it.
 
-Edit the files under the folder **"env"**. Make sure that you do not end up with a new line.
+Edit the files under the folder **"[env](https://github.com/mixerp/init/tree/master/env)"**. Make sure that you do not end up with a new line.
 
 
 ## **Step 2 (Edit hosts file)**
@@ -30,7 +30,7 @@ Edit the files under the folder **"env"**. Make sure that you do not end up with
 Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include the following domains to point back to loopback IP address.
 
 - postgresql.localhost
-- sqlserver. Localhost
+- sqlserver.localhost
 
 **Example**
 
@@ -66,8 +66,8 @@ Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include t
 
 Explore the folder **/Overrides/src/Frapid.Web/Resources/Configs**. Edit these configuration files according to your environment:
 
-- PostgreSQL.config
-- SQLServer.config
+- [PostgreSQL.config](https://github.com/mixerp/init/blob/master/Overrides/src/Frapid.Web/Resources/Configs/PostgreSQL.config)
+- [SQLServer.config](https://github.com/mixerp/init/blob/master/Overrides/src/Frapid.Web/Resources/Configs/SQLServer.config)
 
 
 Note, do not change the credentials of ***frapid_db_user*** and ***report_user*** unless you've changed them in the database.
@@ -77,7 +77,7 @@ Note, do not change the credentials of ***frapid_db_user*** and ***report_user**
 
 ### Step 4 (Associate .ps1 extension toWindows PowerShell)
 
-Right click the file **mixerp-v2.ps1**, and click open with. Browse to the path:
+Right click the file **[mixerp-v2.ps1](https://github.com/mixerp/init/blob/master/mixerp-v2.ps1)**, and click open with. Browse to the path:
 
 **C:\Windows\System32\WindowsPowerShell\v1.0**
 
@@ -93,7 +93,7 @@ set-executionpolicyremotesigned
 
 ## Step 5 (Execute the File "run.bat")
 
-Execute the file "run.bat".
+Execute the file "[run.bat](https://github.com/mixerp/init/blob/master/run.bat)".
 
 
 
@@ -116,7 +116,7 @@ demo@mixerp.org/1234@abcd
 
 If you encounter errors or want to start over, perform these steps (at your own risk):
 
-* Delete the folder mentioned in the file ***env\SolutionDirectory.txt***
+* Delete the folder mentioned in the file ***[env\SolutionDirectory.txt](https://github.com/mixerp/init/blob/master/env/SolutionDirectory.txt)***
 * Delete the IIS Site ***FrapidDevelopment***
 * Delete the IIS App Pool ***FrapidDevelopment***
 
