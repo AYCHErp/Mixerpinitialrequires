@@ -87,7 +87,7 @@ And select “powershell.exe”
 
 **Additionally,** run **Windows PowerShell** as administrator. Enter the following command.
 
-set-executionpolicyremotesigned
+set-executionpolicy remotesigned
 
 
 
