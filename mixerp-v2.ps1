@@ -59,7 +59,7 @@ function copyOverrides(){
 	$source = "$currentDirectory\Overrides\*";
 	$destination = $solutionPath;
 	
-	Copy-Item -Force -Recurse -Verbose $source -Destination $destination 
+	Copy-Item -Force -Recurse $source -Destination $destination 
 };
 
 function createApplication(){
@@ -126,4 +126,4 @@ setPermission "Authenticated Users";
 $buildPath = "$solutionPath\builds";
 cd $buildPath
 
-Start-Process "cmd.exe"  "/c all.bat"
+Invoke-Expression "$env:SystemRoot\System32\cmd.exe /c all.bat"
