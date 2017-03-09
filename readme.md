@@ -120,7 +120,7 @@ If you encounter errors or want to start over, perform these steps (at your own 
 ## Sites Using MixERP Init
 The following sites are automatically re-created every day.
 
-- [http://init01.mixerp.com](init01.mixerp.com) (PostgreSQL)
-- [http://init02.mixerp.com](init02.mixerp.com) (SQL Server)
+- [init01.mixerp.com](http://init01.mixerp.com) (PostgreSQL)
+- [init02.mixerp.com](http://init02.mixerp.com) (SQL Server)
 
 
