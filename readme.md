@@ -91,11 +91,9 @@ set-executionpolicy remotesigned
 
 
 
-## Step 5 (Execute the File "run.bat")
+## Step 5 (Execute the File "run-debug.bat")
 
-Execute the file "[run.bat](https://github.com/mixerp/init/blob/master/run.bat)".
-
-
+Execute the file "[run-debug.bat](https://github.com/mixerp/init/blob/master/run-debug.bat)".
 
 ## Step 6 (Access the Development Sites)
 
@@ -108,9 +106,7 @@ The following tenants were created on your machine.
 
 **Credentials**
 
-demo@mixerp.org/1234@abcd
-
-
+demo@mixerp.org/Demo@4321
 
 ## How to Start over?
 
@@ -121,20 +117,10 @@ If you encounter errors or want to start over, perform these steps (at your own 
 * Delete the IIS App Pool ***FrapidDevelopment***
 
 
+## Sites Using MixERP Init
+The following sites are automatically re-created every day.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [http://init01.mixerp.com](init01.mixerp.com) (PostgreSQL)
+- [http://init02.mixerp.com](init02.mixerp.com) (SQL Server)
 
 

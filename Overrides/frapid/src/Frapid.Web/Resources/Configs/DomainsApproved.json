@@ -1,0 +1,24 @@
+﻿[
+  {
+	"DbProvider": "Npgsql",
+	"DomainName": "postgresql.localhost",
+	"EnforceSsl": false,
+	"CdnDomain": "",
+	"Synonyms": ["init01.mixerp.com"],
+	"BackupDirectory": "/backups/localhost",
+	"BackupDirectoryIsFixedPath": false,
+	"AdminEmail": "demo@mixerp.org",
+    "BcryptedAdminPassword": "$2a$10$Jfj5j9d.aj.9pyd75UNHB.G.3JPJrNktt84/xKwwoCyaW33SNxwR2",
+  },
+  {
+	"DbProvider": "System.Data.SqlClient",
+	"DomainName": "sqlserver.localhost",
+	"EnforceSsl": false,
+	"CdnDomain": "",
+	"Synonyms": ["init02.mixerp.com"],
+	"BackupDirectory": "/backups/localhost",
+	"BackupDirectoryIsFixedPath": false,
+	"AdminEmail": "demo@mixerp.org",
+    "BcryptedAdminPassword": "$2a$10$Jfj5j9d.aj.9pyd75UNHB.G.3JPJrNktt84/xKwwoCyaW33SNxwR2",
+  }
+]

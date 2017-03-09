@@ -21,19 +21,6 @@ function getSolutionDirectory(){
 	return $solutionPath;
 };
 
-function moveDirectoryUp($directory){
-	$parent = (get-item $directory).parent.fullname;
-	
-	Get-ChildItem $directory -force | 
-	Foreach-Object {
-		$file = $_.fullName;
-		$isDirectory = $_.PsIsContainer;
-		
-		Move-Item $file $parent -Force;
-	};
-
-	Remove-Item $directory -Force;
-};
 
 function cloneProject($url, $destination){	
 	git.exe clone $url $destination
@@ -41,13 +28,13 @@ function cloneProject($url, $destination){
 
 function cloneFrapid(){
 	git.exe clone https://github.com/frapid/frapid	
-	moveDirectoryUp "$solutionPath\frapid";
 };
 
 function cloneProjects($root){
 	cd $root	
 	cloneFrapid;
-	
+	cd frapid
+
 	cloneProject "https://github.com/mixerp/finance" "src\Frapid.Web\Areas\MixERP.Finance";
 	cloneProject "https://github.com/mixerp/inventory" "src\Frapid.Web\Areas\MixERP.Inventory";
 	cloneProject "https://github.com/mixerp/sales" "src\Frapid.Web\Areas\MixERP.Sales";
@@ -59,14 +46,20 @@ function copyOverrides(){
 	$source = "$currentDirectory\Overrides\*";
 	$destination = $solutionPath;
 	
-	Copy-Item -Force -Recurse $source -Destination $destination 
+	Copy-Item -Force -Recurse $source -Destination $destination
+	
+	#copy secret configuration files
+	$source = "$currentDirectory\.ignored\*";
+	$destination = "$solutionPath\frapid\src\Frapid.Web\Resources\Configs"
+
+	Copy-Item -Force -Recurse $source -Destination $destination
 };
 
 function createApplication(){
-	$iisAppPoolName = "FrapidDevelopment"
+	$iisAppPoolName = "MixERPInit"
 	$iisAppPoolDotNetVersion = "v4.0"
-	$iisAppName = "FrapidDevelopment"
-	$directoryPath = "$solutionPath\src\Frapid.Web"
+	$iisAppName = "MixERPInit"
+	$directoryPath = "$solutionPath\frapid\src\Frapid.Web"
 
 	#navigate to the app pools root
 	cd IIS:\AppPools\
@@ -90,7 +83,9 @@ function createApplication(){
 
 	$bindings = @(
 	   @{protocol="http";bindingInformation="*:80:postgresql.localhost"},
-	   @{protocol="http";bindingInformation="*:80:sqlserver.localhost"}
+	   @{protocol="http";bindingInformation="*:80:init01.mixerp.com"},
+	   @{protocol="http";bindingInformation="*:80:sqlserver.localhost"},
+	   @{protocol="http";bindingInformation="*:80:init02.mixerp.com"}
 	)
 
 	#create the site
@@ -99,6 +94,7 @@ function createApplication(){
 };
 
 function setPermission($userName){
+	$userName
 	$acl = Get-Acl $solutionPath
 	$accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($userName, "Modify", "ContainerInherit,ObjectInherit", "None", "Allow")
 	$acl.SetAccessRule($accessRule)
@@ -109,7 +105,7 @@ function setPermission($userName){
 $gitDirectory = getGitDirectory
 $env:Path = $gitDirectory
 $solutionPath = getSolutionDirectory
-
+cd $solutionPath
 cloneProjects $solutionPath
 
 "Copying Overrides"
@@ -119,11 +115,5 @@ copyOverrides;
 createApplication;
 
 "Setting permissions"
-setPermission "IIS AppPool\FrapidDevelopment";
+setPermission "IIS AppPool\MixERPInit";
 setPermission "Authenticated Users";
-
-"Building solutions"
-$buildPath = "$solutionPath\builds";
-cd $buildPath
-
-Invoke-Expression "$env:SystemRoot\System32\cmd.exe /c all.bat"
