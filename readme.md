@@ -66,8 +66,8 @@ Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include t
 
 Explore the folder **/Overrides/src/Frapid.Web/Resources/Configs**. Edit these configuration files according to your environment:
 
-- [PostgreSQL.config](https://github.com/mixerp/init/blob/master/Overrides/src/Frapid.Web/Resources/Configs/PostgreSQL.config)
-- [SQLServer.config](https://github.com/mixerp/init/blob/master/Overrides/src/Frapid.Web/Resources/Configs/SQLServer.config)
+- [PostgreSQL.config](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/PostgreSQL.config)
+- [SQLServer.config] (https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/SQLServer.config)
 
 
 Note, do not change the credentials of ***frapid_db_user*** and ***report_user*** unless you've changed them in the database.
@@ -93,7 +93,7 @@ set-executionpolicy remotesigned
 
 ## Step 5 (Execute the File "run-debug.bat")
 
-Execute the file "[run-debug.bat](https://github.com/mixerp/init/blob/master/run-debug.bat)".
+Execute the file "[run-debug.bat](https://github.com/mixerp/init/blob/master/run-debug.bat)" as administrator.
 
 ## Step 6 (Access the Development Sites)
 
@@ -113,8 +113,8 @@ demo@mixerp.org/Demo@4321
 If you encounter errors or want to start over, perform these steps (at your own risk):
 
 * Delete the folder mentioned in the file ***[env\SolutionDirectory.txt](https://github.com/mixerp/init/blob/master/env/SolutionDirectory.txt)***
-* Delete the IIS Site ***FrapidDevelopment***
-* Delete the IIS App Pool ***FrapidDevelopment***
+* Delete the IIS Site ***MixERPInit***
+* Delete the IIS App Pool ***MixERPInit***
 
 
 ## Sites Using MixERP Init
