@@ -5,6 +5,7 @@ Make sure that you have these software installed.
 - Latest version of Visual Studio with Updates
 - IIS
 - SQL Server
+- [Nuget Commandline](https://www.nuget.org/downloads)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Git for Windows](https://git-scm.com/download/win)
 - [Redis](https://github.com/MSOpenTech/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)
@@ -67,7 +68,7 @@ Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include t
 Explore the folder **/Overrides/src/Frapid.Web/Resources/Configs**. Edit these configuration files according to your environment:
 
 - [PostgreSQL.config](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/PostgreSQL.config)
-- [SQLServer.config] (https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/SQLServer.config)
+- [SQLServer.config](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/SQLServer.config)
 
 
 Note, do not change the credentials of ***frapid_db_user*** and ***report_user*** unless you've changed them in the database.
