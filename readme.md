@@ -5,7 +5,7 @@ Make sure that you have these software installed.
 - Latest version of Visual Studio with Updates
 - IIS
 - SQL Server
-- [Nuget Commandline](https://www.nuget.org/downloads)
+- Download [Nuget Commandline](https://www.nuget.org/downloads) and copy to `Windows` directory.
 - [PostgreSQL](https://www.postgresql.org/)
 - [Git for Windows](https://git-scm.com/download/win)
 - [Redis](https://github.com/MSOpenTech/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)
