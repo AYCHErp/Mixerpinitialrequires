@@ -2,7 +2,7 @@
 
 Make sure that you have these software installed.
 
-- Latest version of Visual Studio with Updates
+- Visual Studio 2015 with latest updates
 - IIS
 - SQL Server
 - Download [Nuget Commandline](https://www.nuget.org/downloads) and copy to `Windows` directory.
