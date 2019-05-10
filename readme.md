@@ -4,6 +4,7 @@ Make sure that you have these software installed.
 
 - Visual Studio 2015 with latest updates
 - IIS
+- [MsBuild 14](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
 - SQL Server
 - Download [Nuget Commandline](https://www.nuget.org/downloads) and copy to `Windows` directory.
 - [PostgreSQL](https://www.postgresql.org/)
