@@ -2,9 +2,8 @@
 
 Make sure that you have these software installed.
 
-- Visual Studio 2015 with latest updates
+- Visual Studio 2019 with latest updates
 - IIS
-- [MsBuild 14](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
 - SQL Server
 - Download [Nuget Commandline](https://www.nuget.org/downloads) and copy to `Windows` directory.
 - [PostgreSQL](https://www.postgresql.org/)
@@ -68,8 +67,8 @@ Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include t
 
 Explore the folder **/Overrides/src/Frapid.Web/Resources/Configs**. Edit these configuration files according to your environment:
 
-- [PostgreSQL.config](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/PostgreSQL.config)
-- [SQLServer.config](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/SQLServer.config)
+- [PostgreSQL.json](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/PostgreSQL.json)
+- [SQLServer.json](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/SQLServer.json)
 
 
 Note, do not change the credentials of ***frapid_db_user*** and ***report_user*** unless you've changed them in the database.

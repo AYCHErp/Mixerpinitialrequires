@@ -1,0 +1,17 @@
+﻿{
+	"Server": "localhost",
+	"Port": "",
+	"MetaDatabase": "master",
+	"EnablePooling": "true",
+	"MinPoolSize": "0",
+	"MaxPoolSize": "100",
+	"SuperUserId": "sa",
+	"SuperUserPassword": "???",
+	"TrustedSuperUserConnection": "false",
+	"NetworkLibrary": "dbmslpcn",
+	"UserId": "frapid_db_user",
+	"Password": "change-on-deployment@123",
+	"ReportUserId": "report_user",
+	"ReportUserPassword": "change-on-deployment@123",
+	"DatabaseBackupDirectory": "/Backups/"
+}
