@@ -23,7 +23,7 @@ After installing Git for Windows, clone this repository.
 
 Once you clone the repository, explore to the folder where you cloned it.
 
-Edit the files under the folder **"[env](https://github.com/mixerp/init/tree/master/env)"**. Make sure that you do not end up with a new line.
+Edit the files under the folder **"[env](https://github.com/mixerp/init/tree/master/env)"**. Make sure that you do not end up with a new line. Also make sure that you do not have slash at the end of the solution directory name or you may encounter permission issues on IIS.
 
 
 ## **Step 2 (Edit hosts file)**
