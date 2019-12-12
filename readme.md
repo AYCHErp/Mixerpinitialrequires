@@ -25,10 +25,9 @@ Once you clone the repository, explore to the folder where you cloned it.
 
 Edit the files under the folder **"[env](https://github.com/mixerp/init/tree/master/env)"**. Make sure that you do not end up with a new line. Also make sure that you do not have slash at the end of the solution directory name or you may encounter permission issues on IIS.
 
-
 ## **Step 2 (Edit hosts file)**
 
-Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include the following domains to point back to loopback IP address.
+Edit the **_hosts_** file on **_C:\Windows\System32\drivers\etc_** and include the following domains to point back to loopback IP address.
 
 - postgresql.localhost
 - sqlserver.localhost
@@ -61,8 +60,6 @@ Edit the ***hosts*** file on ***C:\Windows\System32\drivers\etc*** and include t
 127.0.0.1		    sqlserver.localhost
 ```
 
-
-
 ## Step 3 (Edit Configuration Files)
 
 Explore the folder **/Overrides/src/Frapid.Web/Resources/Configs**. Edit these configuration files according to your environment:
@@ -70,11 +67,7 @@ Explore the folder **/Overrides/src/Frapid.Web/Resources/Configs**. Edit these c
 - [PostgreSQL.json](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/PostgreSQL.json)
 - [SQLServer.json](https://github.com/mixerp/init/tree/master/Overrides/frapid/src/Frapid.Web/Resources/Configs/SQLServer.json)
 
-
-Note, do not change the credentials of ***frapid_db_user*** and ***report_user*** unless you've changed them in the database.
-
-
-
+Note, do not change the credentials of **_frapid_db_user_** and **_report_user_** unless you've changed them in the database.
 
 ### Step 4 (Associate .ps1 extension toWindows PowerShell)
 
@@ -84,13 +77,9 @@ Right click the file **[mixerp-v2.ps1](https://github.com/mixerp/init/blob/maste
 
 And select “powershell.exe”
 
-
-
 **Additionally,** run **Windows PowerShell** as administrator. Enter the following command.
 
 set-executionpolicy remotesigned
-
-
 
 ## Step 5 (Execute the File "run-debug.bat")
 
@@ -103,25 +92,29 @@ The following tenants were created on your machine.
 - http://postgresql.localhost
 - http://sqlserver.localhost
 
-
-
 **Credentials**
 
 demo@mixerp.org/Demo@4321
 
+If you end up without the demo user in the `account.users` table, you can manually create or edit an existing user:
+
+```sql
+UPDATE account.users
+SET password = '$2a$10$Jfj5j9d.aj.9pyd75UNHB.G.3JPJrNktt84/xKwwoCyaW33SNxwR2', email='demo@mixerp.org'
+WHERE user_id = ?;
+```
+
 ## How to Start over?
 
-If you encounter errors or want to start over, perform these steps (at your own risk):
+If you encounter errors or want to start over, perform these steps (at your own risk). Before doing that, ensure that [RedisConfig.json](https://github.com/frapid/frapid/blob/master/src/Frapid.Web/Resources/_Configs/RedisConfig.json) file is present and properly configured in the `Resources/Configs` (not \_Configs) directory.
 
-* Delete the folder mentioned in the file ***[env\SolutionDirectory.txt](https://github.com/mixerp/init/blob/master/env/SolutionDirectory.txt)***
-* Delete the IIS Site ***MixERPInit***
-* Delete the IIS App Pool ***MixERPInit***
-
+- Delete the folder mentioned in the file **_[env\SolutionDirectory.txt](https://github.com/mixerp/init/blob/master/env/SolutionDirectory.txt)_**
+- Delete the IIS Site **_MixERPInit_**
+- Delete the IIS App Pool **_MixERPInit_**
 
 ## Sites Using MixERP Init
+
 The following sites are automatically re-created every day.
 
 - [init01.mixerp.com](http://init01.mixerp.com) (PostgreSQL)
 - [init02.mixerp.com](http://init02.mixerp.com) (SQL Server)
-
-
