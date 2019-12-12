@@ -100,7 +100,10 @@ If you end up without the demo user in the `account.users` table, you can manual
 
 ```sql
 UPDATE account.users
-SET password = '$2a$10$Jfj5j9d.aj.9pyd75UNHB.G.3JPJrNktt84/xKwwoCyaW33SNxwR2', email='demo@mixerp.org'
+SET
+  password = '$2a$10$Jfj5j9d.aj.9pyd75UNHB.G.3JPJrNktt84/xKwwoCyaW33SNxwR2',
+  email='demo@mixerp.org',
+  role_id=9999
 WHERE user_id = ?;
 ```
 
